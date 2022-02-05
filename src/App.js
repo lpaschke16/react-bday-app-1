@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+// import the data from the data.js file
+import data from './data';
+import ListComponent from './components/ListComponent'
 
+//console log how many objects are in the data.js arry
+console.log(data.length);
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <section>
+        <label>Select bday month</label>
+        <select>
+          <option>January</option>
+        </select>
+        <h3>There are XX birthday the month of XX</h3>
+        <ListComponent people={data} />
+      </section>
+    </main>
   );
 }
 
