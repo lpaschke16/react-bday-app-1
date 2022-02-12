@@ -1,21 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-// import the data from the data.js file
 import data from './data';
 import ListComponent from './components/ListComponent'
+import MonthDropDown from './components/MonthDropDown'
 
-//console log how many objects are in the data.js arry
-console.log(data.length);
+
 function App() {
+  const currentMonth = new Date();
+  const [people, setPeople] = useState(data);
+  const [bdays, setBdays] = useState(0);
+  const [month, setMonth] = useState(currentMonth.toLocaleString('default', { month: 'long' }));
+
   return (
     <main className="App">
       <section>
-        <label>Select bday month</label>
-        <select>
-          <option>January</option>
-        </select>
-        <h3>There are XX birthday the month of XX</h3>
-        <ListComponent people={data} />
+        <h1>Birthday calendar app</h1>
+        <MonthDropDown setMonth={setMonth} setMonthValue={month} setBdays={setBdays} />
+        <h3>There are {bdays} birthday the month of {month}</h3>
+        <ListComponent data={people} setMonthValue={month} setBdays={setBdays} />
+        <button onClick={() => setPeople([])}>Clear all</button>
       </section>
     </main>
   );

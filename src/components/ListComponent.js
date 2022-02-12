@@ -1,14 +1,23 @@
-function ListComponent(props) {
-  return (
-    /* we need to iterrate through the people data and display all the information for each person */
-    <p>
-    {props.people.map((person) => {
-      return (
-        <div>{person.name}</div>
-      )
-    })}
-    </p>
-  )
+function ListComponent({ data, setMonthValue, setBdays }) {
+  if(setMonthValue) {
+    return (
+      <>
+        {data
+          .filter((person) => {
+            return person.month == setMonthValue;
+          })
+          .map((person, index, array) => {
+            setBdays(array.length);
+            return (
+              <>
+              <div>{person.name}</div>
+              <div>{person.age}</div>
+              </>
+            )
+          })}
+      </>
+    );
+  }
 }
 
 export default ListComponent;
