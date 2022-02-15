@@ -11,7 +11,8 @@ function ListComponent({ data, setMonthValue, setBdays }) {
             return (
               <>
               <div>{person.name}</div>
-              <div>{person.age}</div>
+              <div>{2022-person.age}</div>
+              <button><a href={`mailto: ${person.email}`}>Send an Email</a></button>
               </>
             )
           })}
