@@ -1,3 +1,6 @@
+body {
+  background-color: beige;
+}
 .App {
   text-align: center;
 }
@@ -7,6 +10,38 @@
   pointer-events: none;
 }
 
+a {
+  text-decoration: none;
+}
+img {
+  margin: 10px;
+}
+
+button {
+  display: block;
+  width: 200px;
+  margin: 10px auto;
+  color: #282c34;
+  text-decoration: none;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.person-container {
+  font-size: 16px;
+  font-weight: bold;
+  width: 400px;
+  height: 100%;
+  padding: 10px;
+  background-color: #61dafb;
+  border-radius: 20px ;
+  margin-bottom: 20px;
+}
+
+main {
+  margin: 0 auto;
+  width: 50%;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
